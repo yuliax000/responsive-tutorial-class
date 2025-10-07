@@ -16,6 +16,11 @@ modeButton.addEventListener("click", () => {
   switchModes(islightMode);
 });
 
-
 // when page loads, test the current user color mode preference
-let checkDarkMode = window.matchMedia("(prefers-color-scheme:dar")
+let checkDarkMode = window.matchMedia("(prefers-color-scheme:dark)");
+
+// if above test is true, user prefers dark mode
+if (checkDarkMode.matches) {
+  islightMode = false;
+  switchModes(true);
+}
